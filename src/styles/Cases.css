@@ -150,6 +150,66 @@
   font-weight: 500;
 }
 
+.case-future-vision {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(63, 81, 181, 0.05);
+  border-radius: 8px;
+}
+
+.case-future-vision h4 {
+  font-size: 1.05rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.case-future-vision p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  font-style: italic;
+}
+
+.case-development-plan {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(63, 81, 181, 0.03);
+  border-radius: 8px;
+  border-left: 3px solid var(--primary-color);
+}
+
+.case-development-plan h4 {
+  font-size: 1.05rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.development-item {
+  margin-bottom: 12px;
+}
+
+.development-item:last-child {
+  margin-bottom: 0;
+}
+
+.development-tag {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.development-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--light-text);
+}
+
 @media (max-width: 768px) {
   .cases {
     padding: 60px 0;

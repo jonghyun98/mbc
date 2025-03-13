@@ -137,6 +137,74 @@
   animation: rotate 20s linear infinite;
 }
 
+.solution-expandability {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: rgba(63, 81, 181, 0.05);
+  border-radius: 8px;
+}
+
+.solution-expandability h4 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.solution-expandability ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.solution-expandability li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.solution-expandability li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #7986cb;
+  font-weight: bold;
+}
+
+.solution-problemsolving {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: rgba(63, 81, 181, 0.03);
+  border-radius: 8px;
+  border-left: 3px solid var(--primary-color);
+}
+
+.solution-problemsolving h4 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.problemsolving-item {
+  margin-bottom: 15px;
+}
+
+.problemsolving-tag {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.problemsolving-item p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
 @media (max-width: 992px) {
   .solution-item, 
   .solution-item:nth-child(even) {
