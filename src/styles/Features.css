@@ -175,6 +175,64 @@
   transform: translateY(-2px);
 }
 
+.feature-budget {
+  margin: 15px 0;
+  background-color: rgba(76, 175, 80, 0.1);
+  padding: 10px 15px;
+  border-radius: 5px;
+  border-left: 3px solid var(--secondary-color);
+  display: flex;
+  align-items: center;
+}
+
+.budget-label {
+  font-weight: 600;
+  margin-right: 10px;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.budget-amount {
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.feature-implementation {
+  background-color: rgba(63, 81, 181, 0.05);
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.feature-implementation h4 {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.feature-implementation ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.feature-implementation li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.feature-implementation li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   .features {
     padding: 80px 0;
