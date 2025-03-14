@@ -1,6 +1,6 @@
 .cases {
+  background-color: white;
   padding: 100px 0;
-  background-color: #fff;
 }
 
 .section-subtitle {
@@ -15,94 +15,93 @@
 }
 
 .cases-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
   margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
 }
 
 .case-card {
-  background: white;
-  border-radius: 8px;
+  background: var(--light-background);
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  margin: 0 auto;
+  max-width: 900px;
 }
 
-.case-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+@media (min-width: 992px) {
+  .case-card {
+    flex-direction: row;
+  }
 }
 
 .case-image {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
-
-.case-image .image-placeholder {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(63, 81, 181, 0.1);
+  flex: 1;
+  background-color: var(--primary-color);
+  position: relative;
+  min-height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
-  color: var(--primary-color);
+}
+
+.image-placeholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .case-icon {
-  font-size: 4rem;
-  font-weight: bold;
-  color: rgba(63, 81, 181, 0.6);
-  background: rgba(255, 255, 255, 0.5);
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
 .case-content {
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  flex: 2;
+  padding: 30px;
 }
 
 .case-title {
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: var(--primary-color);
 }
 
 .case-broadcaster {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--secondary-color);
-  margin-bottom: 15px;
   font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .case-description {
-  color: var(--light-text);
+  font-size: 1rem;
   line-height: 1.6;
-  font-size: 0.95rem;
   margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.case-results h4,
+.case-future-vision h4,
+.case-development-plan h4 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(63, 81, 181, 0.2);
 }
 
 .case-results {
   margin-bottom: 20px;
-}
-
-.case-results h4 {
-  font-size: 1.05rem;
-  color: var(--primary-color);
-  margin-bottom: 10px;
 }
 
 .case-results ul {
@@ -112,102 +111,106 @@
 
 .case-results li {
   position: relative;
-  padding-left: 22px;
-  margin-bottom: 8px;
-  font-size: 0.9rem;
+  padding-left: 25px;
+  margin-bottom: 10px;
   line-height: 1.5;
 }
 
 .case-results li:before {
-  content: "•";
+  content: "✓";
   position: absolute;
-  left: 5px;
+  left: 0;
   color: var(--secondary-color);
   font-weight: bold;
 }
 
 .case-quote {
   background-color: rgba(63, 81, 181, 0.05);
-  padding: 15px;
   border-left: 3px solid var(--primary-color);
-  margin-top: auto;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 5px;
 }
 
 .case-quote blockquote {
-  margin: 0 0 10px 0;
   font-style: italic;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .case-quote cite {
   display: block;
-  text-align: right;
-  font-size: 0.85rem;
-  color: var(--light-text);
-  font-style: normal;
+  margin-top: 10px;
   font-weight: 500;
+  font-size: 0.9rem;
+  text-align: right;
 }
 
 .case-future-vision {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: rgba(63, 81, 181, 0.05);
-  border-radius: 8px;
-}
-
-.case-future-vision h4 {
-  font-size: 1.05rem;
-  color: var(--primary-color);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .case-future-vision p {
-  font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--text-color);
-  font-style: italic;
+  font-size: 1rem;
 }
 
 .case-development-plan {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: rgba(63, 81, 181, 0.03);
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
-  border-left: 3px solid var(--primary-color);
-}
-
-.case-development-plan h4 {
-  font-size: 1.05rem;
-  color: var(--primary-color);
-  margin-bottom: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .development-item {
-  margin-bottom: 12px;
-}
-
-.development-item:last-child {
-  margin-bottom: 0;
+  margin-bottom: 15px;
 }
 
 .development-tag {
   display: inline-block;
   background-color: var(--primary-color);
   color: white;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 0.8rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.85rem;
   font-weight: 500;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .development-item p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   line-height: 1.5;
-  color: var(--light-text);
+}
+
+.case-international-reference {
+  margin-top: 30px;
+  padding: 25px;
+  background-color: rgba(63, 81, 181, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid var(--secondary-color);
+}
+
+.reference-title {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.reference-source {
+  font-style: italic;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.reference-learnings {
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: var(--text-color);
 }
 
 @media (max-width: 768px) {
@@ -215,17 +218,27 @@
     padding: 60px 0;
   }
   
-  .cases-grid {
-    grid-template-columns: 1fr;
+  .case-card {
+    flex-direction: column;
   }
   
-  .case-image {
-    height: 180px;
+  .case-content {
+    padding: 20px;
   }
   
-  .case-icon {
-    font-size: 3rem;
-    width: 80px;
-    height: 80px;
+  .case-title {
+    font-size: 1.4rem;
+  }
+  
+  .case-broadcaster {
+    font-size: 0.9rem;
+  }
+  
+  .case-quote {
+    padding: 15px;
+  }
+  
+  .case-development-plan {
+    padding: 15px;
   }
 } 
