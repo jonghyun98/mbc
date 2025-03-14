@@ -14,6 +14,15 @@ interface Feature {
   products?: string[];
   budget?: string;
   implementation?: string[];
+  systemArchitecture?: {
+    title: string;
+    description: string;
+    components: {
+      name: string;
+      description: string;
+    }[];
+    workflow: string[];
+  };
 }
 
 interface FeaturesProps {
@@ -157,7 +166,40 @@ const Features: React.FC<FeaturesProps> = ({
         'AI가 제작 과정(루머 모니터링·스크리닝)에 참여하므로, 인력 부담 최소화',
         '시청자에게 "AI = 가짜뉴스를 억제하는 존재" 이미지 제공',
         '선거·재난 상황에서 특별 편성 가능으로 공영미디어 책무 강화'
-      ]
+      ],
+      systemArchitecture: {
+        title: 'AI 팩트체크 시스템 구조',
+        description: '허위정보를 수집부터 검증, 배포까지 효율적으로 처리하는 5단계 파이프라인 아키텍처로 설계되었습니다. 각 단계별 전문 AI 모듈이 연계되어 정확도와 신속성을 보장합니다.',
+        components: [
+          {
+            name: '데이터 수집 엔진',
+            description: '소셜미디어 API, RSS 피드, 웹 크롤링 등을 통해 지역 관련 정보를 실시간으로 수집합니다. 확산 속도, 키워드 매칭, 지역 연관성을 기준으로 우선순위를 판단합니다.'
+          },
+          {
+            name: '멀티모달 분석기',
+            description: '텍스트(NLP), 이미지(컴퓨터 비전), 오디오(음성 인식) 등 다양한 형태의 콘텐츠를 병렬 처리하여 조작·변형 징후를 탐지합니다. 딥러닝 기반 변조 탐지 알고리즘을 적용합니다.'
+          },
+          {
+            name: '신뢰도 평가 모듈',
+            description: '소스 신뢰성, 주장의 일관성, 내용의 검증 가능성, 확산 패턴 등을 종합 분석하여 5단계 신뢰도 점수(S-A-B-C-D)를 부여합니다. 평가 기준은 공개 투명하게 운영됩니다.'
+          },
+          {
+            name: '팩트체크 워크벤치',
+            description: '인간 팩트체커(기자, 전문가)와 AI의 협업 환경으로, AI가 제안한 관련 정보와 참고 자료를 검토하고 최종 판단을 내릴 수 있는 인터페이스를 제공합니다.'
+          },
+          {
+            name: '배포 및 피드백 시스템',
+            description: '검증된 정보를 다양한 형태(팩트카드, 인포그래픽, 요약 영상 등)로 자동 생성하고 TV, 웹, 모바일, SNS 등 다중 채널로 배포합니다. 사용자 피드백을 수집하여 시스템 개선에 활용합니다.'
+          }
+        ],
+        workflow: [
+          '1단계 - 모니터링: AI 크롤러가 24시간 지역 관련 정보 수집 및 위험도 스크리닝',
+          '2단계 - 우선순위화: 확산 속도, 잠재적 피해, 지역 관련성을 기준으로 체크 대상 선정',
+          '3단계 - AI 사전 분석: 자동화된 검증 프로세스로 유사 사례 검색, 출처 확인, 맥락 파악',
+          '4단계 - 인간 검증: 전문 팩트체커가 AI 분석 결과를 바탕으로 최종 판단',
+          '5단계 - 결과 배포: 검증 결과를 "팩트카드" 형태로 제작하여 다채널 동시 배포'
+        ]
+      }
     },
     {
       title: 'AI 번역 더빙 채널',
@@ -382,6 +424,32 @@ const Features: React.FC<FeaturesProps> = ({
               {feature.highlight && (
                 <div className="feature-highlight-tag">
                   <span>{feature.highlight}</span>
+                </div>
+              )}
+              
+              {feature.systemArchitecture && (
+                <div className="feature-system-architecture">
+                  <h4>{feature.systemArchitecture.title}</h4>
+                  <p className="architecture-description">{feature.systemArchitecture.description}</p>
+                  
+                  <div className="architecture-components">
+                    <h5>주요 구성요소</h5>
+                    {feature.systemArchitecture.components.map((component, compIndex) => (
+                      <div className="component-item" key={compIndex}>
+                        <span className="component-name">{component.name}</span>
+                        <p className="component-description">{component.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="architecture-workflow">
+                    <h5>작동 프로세스</h5>
+                    <ul className="workflow-steps">
+                      {feature.systemArchitecture.workflow.map((step, stepIndex) => (
+                        <li key={stepIndex}>{step}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               )}
             </div>

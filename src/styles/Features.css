@@ -233,6 +233,101 @@
   font-weight: bold;
 }
 
+.feature-system-architecture {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: rgba(63, 81, 181, 0.05);
+  border-radius: 8px;
+  text-align: left;
+  border-left: 3px solid var(--primary-color);
+}
+
+.feature-system-architecture h4 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.architecture-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.architecture-components, 
+.architecture-workflow {
+  margin-top: 20px;
+}
+
+.architecture-components h5,
+.architecture-workflow h5 {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(63, 81, 181, 0.2);
+}
+
+.component-item {
+  margin-bottom: 15px;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.component-name {
+  display: block;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.component-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.workflow-steps {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.workflow-steps li {
+  position: relative;
+  padding: 12px 12px 12px 40px;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  counter-increment: workflow-counter;
+}
+
+.workflow-steps li::before {
+  content: counter(workflow-counter);
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   .features {
     padding: 80px 0;
@@ -259,5 +354,18 @@
   
   .feature-details li {
     font-size: 0.9rem;
+  }
+  
+  .feature-system-architecture {
+    padding: 15px;
+  }
+  
+  .component-item,
+  .workflow-steps li {
+    padding: 10px;
+  }
+  
+  .workflow-steps li {
+    padding-left: 35px;
   }
 } 
