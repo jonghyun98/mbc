@@ -1,12 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../styles/Header.css';
+
+interface MenuItem {
+  name: string;
+  path: string;
+}
 
 interface HeaderProps {
   logo?: string;
-  menuItems?: string[];
+  menuItems?: MenuItem[];
 }
 
-const Header: React.FC<HeaderProps> = ({ logo = 'AI 방송 솔루션', menuItems = ['홈', '솔루션', '사례', '기능'] }) => {
+const Header: React.FC<HeaderProps> = ({ 
+  logo = 'AI 방송 솔루션', 
+  menuItems = [
+    { name: '홈', path: '/' },
+    { name: '솔루션', path: '/#솔루션' },
+    { name: '사례', path: '/#사례' },
+    { name: '기능', path: '/#기능' },
+    { name: 'AI 팩트체크', path: '/factcheck' }
+  ] 
+}) => {
   return (
     <header className="header">
       <div className="container">
@@ -15,7 +30,11 @@ const Header: React.FC<HeaderProps> = ({ logo = 'AI 방송 솔루션', menuItems
           <ul className="menu">
             {menuItems.map((item, index) => (
               <li key={index} className="menu-item">
-                <a href={`#${item}`}>{item}</a>
+                {item.path.includes('#') ? (
+                  <a href={item.path}>{item.name}</a>
+                ) : (
+                  <Link to={item.path}>{item.name}</Link>
+                )}
               </li>
             ))}
           </ul>
